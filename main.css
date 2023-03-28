@@ -1,146 +1,87 @@
 * {
     margin: 0;
-    border: none;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body>header {
-    background-color: #2f3640;
-    padding: 16px 0;
-    color: #f5f6fa;
+body {
+    background-color: rgb(12, 16, 11);
 }
 
-header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-header li {
-    display: inline;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    margin-left: 20px;
-}
-
-header li a {
-    color: #fff;
-    text-decoration: none;
+h1 {
+    text-align: center;
+    color: lightseagreen;
+    margin: 20px;
 }
 
 .container {
-    width: 1200px;
-    margin: 0 auto;
-}
-
-.container h2 {
-    font-size: 30px;
-}
-
-.articles {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
 }
 
-.articles article img {
-    height: 180px;
-}
-
-.articles article {
-    width: 30%;
-}
-
-section {
-    padding: 16px 0;
-}
-
-section h2,
-.articles article {
-    margin-bottom: 16px;
-}
-
-.articles article h3 {
-    margin: 8px 0;
-}
-
-.articles article a {
-    background-color: lightskyblue;
-    color: #fff;
-    padding: 8px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 16px;
-    border-radius: 15px;
-
-}
-
-.articles article a:hover {
-    outline: 1.5px solid #fff;
-}
-
-.articles article p,
-.articles article a {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.articles article h3 {
-    font-size: 24px;
-}
-
-.section h2 {
-    font-size: 32px;
-}
-
-#sports {
-    background-color: #ef2f2f;
-}
-
-#sports .articles article a {
-    background-color: #EF862F;
-    color: rgb(249, 249, 248);
-}
-
-#economy {
-    background-color: #dff782;
-}
-
-#economy .articles article a {
-    background-color: #A5E77A;
-    color: rgb(249, 249, 248);
-}
-
-#economy .articles article a:hover {
-    outline: 1.5px solid black;
-    color: #2f3640;
-}
-
-#entretenimento {
-    background-color: #ef639f;
-}
-
-#entretenimento .articles article a {
-    background-color: #FF846A;
-    color: rgb(249, 249, 248);
-}
-
-#tecnologia {
-    background-color: #55ffcc;
-    padding-top: 50px;
-}
-
-#tecnologia .articles article a {
-    background-color: #8BC2FF;
-}
-
-#tecnologia .articles article a:hover {
-    outline: 1.5px solid black;
-    color: #2f3640;
-}
-
-footer {
+input,
+button,
+label {
     text-align: center;
-    background-color: #2f3640;
-    color: rgb(249, 249, 248);
+    display: block;
+    width: 400px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+input {
+    border: 0.5px solid lightgray;
+}
+
+button {
+    margin: auto;
+    width: 200px;
+    font-size: 15px;
+    margin-top: 10px;
+    border: none;
+}
+
+button:hover {
+    border: 1px solid darkgray;
+    background-color: brown;
+    color: white;
+}
+
+p {
+    display: none;
+}
+
+.error-message,
+.success-message {
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    padding: 8px;
+    margin: auto;
+    margin-top: 8px;
+    border-radius: 20px;
+    font-size: 16px;
+    display: block;
+}
+
+.error-message {
+    background-color: lightsalmon;
+}
+
+.success-message {
+    background-color: lightgreen;
+}
+
+.campoStyleError {
+    color: lightcoral;
+    outline-color: lightcoral;
+    border: 2px solid lightcoral;
+}
+
+.campoStyleSuccess {
+    color: lightgreen;
+    outline-color: lightgreen;
+    border: 2px solid lightgreen;
 }
