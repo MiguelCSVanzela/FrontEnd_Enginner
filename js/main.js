@@ -12,12 +12,12 @@ $(document).ready(function () {
             case 1:
                 $(this).addClass("clicado");
                 $("#sortable").sortable();
-                $(this).text("Desordenar");
+                $("#imgOrdenar").attr("src", "/icons/ordenar2.png");
                 break;
             case 2:
                 $(this).removeClass("clicado");
                 $("#sortable").sortable("disable");
-                $(this).text("Ordenar")
+                $("#imgOrdenar").attr("src", "/icons/ordenar1.png");
                 break;
         }
         iteracao++;
@@ -32,13 +32,13 @@ $(document).ready(function () {
             case 1:
                 $("body").addClass("tema-fundo");
                 $(this).addClass("clicado");
-                $(this).text("Dia");
+                $("#imgFundo").attr("src", "/icons/sol.png");
                 break;
 
             case 2:
                 $("body").removeClass("tema-fundo");
                 $(this).removeClass("clicado");
-                $(this).text("Noite")
+                $("#imgFundo").attr("src", "/icons/lua.png");
                 break;
         }
         iteracao++;
@@ -46,8 +46,8 @@ $(document).ready(function () {
         $(this).data('iteracao', iteracao);
     })
 
-    $('#telefone').mask("(00)00000-0000", {
-        placeholder: "(12)12345-1234"
+    $('#telefone').mask("(00) 00000-0000", {
+        placeholder: "(12) 12345-1234"
     })
 
     $('#cpf').mask('000.000.000-00', {
@@ -91,10 +91,23 @@ $(document).ready(function () {
         },
         submitHandler: function (event) {
             let nome = $("#nome").val();
+            let primeiroNome = nome.split(' ');
             if (nome) {
-                $("#registro").fadeIn();
-                $("#registro").text(`${nome}, o seu registro já está em nosso banco de dados. Muito Obrigado!`);
+                swal({
+                    title: "SUCESSO",
+                    text: `${primeiroNome[0]}, seu cadastro foi realizado.`,
+                    icon: "success",
+                    button: "Maravilha"
+                })
+                $("#nome").val('');
+                $("#email").val('');
+                $("#telefone").val('');
+                $("#cpf").val('');
+                $("#enderecoCompleto").val('');
+                $("#cep").val('');
             }
+
+
         },
         invalidHandler: function (event, validator) {
             let camposInvalidos = validator.numberOfInvalids();
@@ -102,7 +115,5 @@ $(document).ready(function () {
                 alert(`Ainda há ${camposInvalidos} campos invalidos`);
             }
         }
-
     })
-
 })
