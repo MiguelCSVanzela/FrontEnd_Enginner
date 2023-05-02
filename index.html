@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/clipboardy.ico" type="image/x-icon">
+    <title>FORM BS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-between">
+            <div>
+                <input type="color" class="form-control form-control-color" id="cor-primaria" onchange="background()"
+                    title="Degrade para a direita">
+            </div>
+            <h1 class="display-6 text-uppercase fw-light text-info" id="titulo">Formulário Boostrap</h1>
+            <div>
+                <input type="color" class="form-control form-control-color" id="cor-secundaria" onchange="background()"
+                    title="Degrade para a esquerda">
+            </div>
+        </header>
+        <div class="row">
+            <form class="needs-validation accordion" novalidate>
+                <div class="col-6 mx-auto">
+                    <label class="form-label nome" for="nome">Nome:</label>
+                    <input class="form-control" id="nome" type="text" required>
+                    <div class="valid-feedback">
+                        Perfeito, te chamarei assim então!
+                    </div>
+                    <div class="invalid-feedback">
+                        Insira um nome, por favor!
+                    </div>
+                </div>
+
+                <div class="col-6 mx-auto">
+                    <label class="form-label email" for="email">Email:</label>
+                    <input class="form-control" id="email" type="email" required>
+                    <div class="valid-feedback">
+                        Bom, parece válido este email.
+                    </div>
+                    <div class="invalid-feedback">
+                        Só posso te retornar com um email válido.
+                    </div>
+                </div>
+
+                <div class="col-6 mx-auto">
+                    <label class="form-label telefone" for="telefone">WhatsApp:</label>
+                    <input class="form-control" id="telefone" type="tel" required>
+                    <div class="valid-feedback">
+                        Beleza, irei te chamar no zap.
+                    </div>
+                    <div class="invalid-feedback">
+                        Não deu certo aqui, será que poderia corrigir esse whats, por favor!
+                    </div>
+                </div>
+
+                <div class="col-6 mx-auto">
+                    <label class="form-label recado" for="recado">Recado:</label>
+                    <textarea class="form-control" id="recado" required
+                        aria-labelledby="mensagemExplicativa"></textarea>
+                    <div class="valid-feedback">
+                        É bom saber o que deseja!
+                    </div>
+                    <div class="invalid-feedback">
+                        Adoraria muito descobrir o que deseja.
+                    </div>
+                    <div id="mensagemExplicativa" class="form-text">
+                        Pode ser uma mensagem breve, clara e objetiva.
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-outline-info m-auto px-4 my-3" type="submit">
+                        <img src="icons/clipboard.png" class="img-fluid" />
+                        Enviar
+                    </button>
+                </div>
+                <div class="containerAlerta">
+                    <div id="alerta"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
