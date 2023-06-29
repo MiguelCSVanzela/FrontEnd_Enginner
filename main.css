@@ -1,0 +1,115 @@
+:root {
+    --header-color: #01a3a4;
+    --bg-color: #eee;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body {
+    background-color: var(--bg-color);;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--header-color);
+    text-align: center;
+    height: 30vh;
+}
+
+header .container {
+    position: relative;
+    bottom: -50%;
+}
+
+.profile-avatar {
+    border-radius: 50%;
+    margin-bottom: 24px;
+    width: 180px;
+    height: 180px;
+}
+
+.profile-name {
+    font-size: 2em;
+}
+
+.profile-username {
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    margin: 16px 0 32px;
+    font-size: 1.8em;
+}
+
+.profile-link {
+    background-color: var(--header-color);
+    color: var(--bg-color);
+    padding: 18px 32px;
+    display: inline-block;
+    margin-top: 24px;
+    text-decoration: none;
+    transition: all .6s ease;
+    border-radius: 20px;
+}
+
+.profile-link:hover{
+    transform: scale(1.2);
+    transition: all .6s ease;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.numbers-item {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.numbers-item h4 {
+    font-size: .5em;
+    text-transform: uppercase;
+}
+
+.numbers-item span{
+}
+
+.userFound1{
+    background-color: #21D4FD;
+    background-image: linear-gradient(153deg, #21D4FD 0%, #B721FF 100%);
+    
+}
+.userFound2{
+    background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+.userFound3{
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+}
+.userFound4{
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);    
+}
+
+#bio{
+    margin: 50px;
+    display: block;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 1s ease;
+
+}
+
