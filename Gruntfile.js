@@ -13,7 +13,7 @@ module.exports = function (grunt) {
                     compress: true
                 },
                 files: {
-                    'build/styles/main.min.css': 'source/styles/main.less'
+                    'dist/styles/main.min.css': 'source/styles/main.less'
                 }
             }
         },
@@ -22,32 +22,21 @@ module.exports = function (grunt) {
                 files: ['source/styles/**/*.less'],
                 tasks: ['less:development']
             },
-            obfuscator: {
-                files: ['source/scripts/main.js'],
-                tasks: ['obfuscator']
-            },
-            uglify: {
-                files: ['prebuild/scripts/main.js'],
-                tasks: ['uglify']
+            html: {
+                files: ['source/index.html'],
+                tasks: ['replace:build']
             }
-
         },
         uglify: {
             target: {
                 files: {
-                    'build/scripts/main.min.js': 'prebuild/scripts/main.js'
+                    'dist/scripts/main.min.js': 'source/scripts/main.js'
                 }
             }
         },
-        obfuscator: {
-            uglify: {
-                files: {
-                    'prebuild/scripts/main.js': 'source/scripts/main.js'
-                }
-            }
-        },
+
         replace: {
-            build: {
+            dist: {
                 options: {
                     patterns:
                         [
@@ -66,23 +55,32 @@ module.exports = function (grunt) {
                         expand: true,
                         flatten: true,
                         src: ['source/index.html'],
-                        dest: 'build/'
+                        dest: 'dist/'
                     }
                 ]
             }
         },
-        clean: ['prebuild']
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    "dist/index.min.html": "source/index.html"
+                }
+            }
+        }
     })
 
 
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-obfuscator');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-replace');
-    grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('default', ['watch'])
-    grunt.registerTask('build', ['less:production', 'clean'])
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'uglify']);
 }
 
